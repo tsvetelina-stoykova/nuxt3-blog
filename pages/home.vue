@@ -5,3 +5,12 @@
         <Footer />
     </div>
 </template>
+
+<script setup>
+
+    const route = useRoute()
+    useMeta({
+    title: 'Home'
+    })
+
+</script>

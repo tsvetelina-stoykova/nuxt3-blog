@@ -19,12 +19,16 @@
 
 
 <script setup>
-import { useRoute } from 'vue-router';
+    import { useRoute } from 'vue-router';
+    const route = useRoute()
+    const {params} = useRoute();
+    const post = useState('post', () => null);
 
-const {params} = useRoute();
-const post = useState('post', () => null);
-
- const { data } = await useFetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
+    const { data } = await useFetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
     post.value = data;
 
+        
+    useMeta({
+    title: 'Post'
+    })
 </script>
